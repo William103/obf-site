@@ -1,4 +1,4 @@
-// import OpenSeadragon from "openseadragon";
+import OpenSeadragon from "openseadragon";
 import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 import "../assets/styles/styles.scss";
@@ -13,54 +13,54 @@ import "../assets/styles/styles.scss";
  * @returns a @Col 
  */
 export const OpenSeadragonViewer = ({ imageId }) => {
-//   const [viewer, setViewer] = useState(null);
+  const [viewer, setViewer] = useState(null);
 
-//   //Getting the id ready to feed to viewer
-//   const baseURl = "https://digitalcollections.tricolib.brynmawr.edu/iiif/2/";
-//   const postFix = "~JP2~/info.json";
-//   let idWithColon = imageId.slice(0, 2) + ":" + imageId.slice(2);
-//   console.log(idWithColon);
-//   let image = baseURl + idWithColon + postFix;
-//   console.log(image);
+  //Getting the id ready to feed to viewer
+  const baseURl = "https://digitalcollections.tricolib.brynmawr.edu/iiif/2/";
+  const postFix = "~JP2~/info.json";
+  let idWithColon = imageId.slice(0, 2) + ":" + imageId.slice(2);
+  console.log(idWithColon);
+  let image = baseURl + idWithColon + postFix;
+  console.log(image);
 
-//   useEffect(() => {
-//     if (image && viewer) {
-//       viewer.open(image);
-//     }
-//   }, [image]);
+  useEffect(() => {
+    if (image && viewer) {
+      viewer.open(image);
+    }
+  }, [image]);
 
-//   //Initialize the viewer
-// useEffect(() => {
-//    if(typeof document !="undefined"){
-//       const InitOpenSeadragon = () => {
-//         viewer && viewer.destroy();
-//         setViewer(
-//           OpenSeadragon({
-//             id: "openseadragon",
-//             prefixUrl: "openseadragon/images/",
-//             preserveViewport: true,
-//             visibilityRatio: 1,
-//             minZoomLevel: 1,
-//             defaultZoomLevel: 1,
-//             sequenceMode: false,
-//             tileSources: [image],
-//           })
-//         );
-//       };
+  //Initialize the viewer
+useEffect(() => {
+   if(typeof document !="undefined"){
+      const InitOpenSeadragon = () => {
+        viewer && viewer.destroy();
+        setViewer(
+          OpenSeadragon({
+            id: "openseadragon",
+            prefixUrl: "openseadragon/images/",
+            preserveViewport: true,
+            visibilityRatio: 1,
+            minZoomLevel: 1,
+            defaultZoomLevel: 1,
+            sequenceMode: false,
+            tileSources: [image],
+          })
+        );
+      };
 
-//       InitOpenSeadragon();
-//       return () => {
-//         viewer && viewer.destroy();
-//       };
+      InitOpenSeadragon();
+      return () => {
+        viewer && viewer.destroy();
+      };
 
-//    }
-// },[])
+   }
+},[])
 
 
-// if(typeof window !== "undefined"){
-//   console.log(typeof window);
-//     return <Col id="openseadragon"></Col>;
-// }
+if(typeof window !== "undefined"){
+  console.log(typeof window);
+    return <Col id="openseadragon"></Col>;
+}
 return null;
 };
 

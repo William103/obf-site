@@ -245,7 +245,7 @@ const Volume = (props) => {
             {/* </IconContext.Provider> */}
           </div>
           <div id="journal-image">
-            <JournalImage imageId={currentPid} />
+            <OpenSeadragonViewer imageId={currentPid} />
           </div>
         </Col>
 
