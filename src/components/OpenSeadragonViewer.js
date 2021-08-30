@@ -31,7 +31,7 @@ export const OpenSeadragonViewer = ({ imageId }) => {
 
   //Initialize the viewer
 useEffect(() => {
-   if(typeof document !="undefined"){
+
       const InitOpenSeadragon = () => {
         viewer && viewer.destroy();
         setViewer(
@@ -51,16 +51,9 @@ useEffect(() => {
       InitOpenSeadragon();
       return () => {
         viewer && viewer.destroy();
-      };
-
    }
 },[])
-
-
-if(typeof window !== "undefined"){
-  console.log(typeof window);
-    return <Col id="openseadragon"></Col>;
-}
+    return <Col id="openseadragon"></Col>
 return null;
 };
 
