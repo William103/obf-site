@@ -397,6 +397,14 @@ export const Signed = (props) => {
   );
 };
 
+export const Space = (props) => {
+  return(
+    <Behavior node={props.teiNode}>
+      ___
+    </Behavior>
+  );
+};
+
 export const Table = (props) => {
   return(
     <Behavior node={props.teiNode}>

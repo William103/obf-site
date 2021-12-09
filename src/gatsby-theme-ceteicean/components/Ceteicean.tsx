@@ -51,7 +51,7 @@ const ShadowedCeteicean = ({pageContext, data, location}) => {
     "tei-said": El.Said,
     "tei-salute": El.Salute,
     "tei-signed": El.Signed,
-    //"tei-space"
+    "tei-space": El.Space,
     "tei-supplied": El.Supplied,
     "tei-table": El.Table,
     "tei-title": El.Title, //titlePart?
